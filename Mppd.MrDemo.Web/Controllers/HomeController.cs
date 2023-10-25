@@ -18,9 +18,9 @@ namespace Mppd.MrDemo.Web.Controllers
       return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult HierarchyTree()
     {
-      return View();
+      return RedirectToAction("Index", "HierarchyTree");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

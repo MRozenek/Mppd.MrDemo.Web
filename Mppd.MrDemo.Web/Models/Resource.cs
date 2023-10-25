@@ -1,9 +1,12 @@
-﻿namespace Mppd.MrDemo.Web.Models;
+﻿using System.ComponentModel;
+
+namespace Mppd.MrDemo.Web.Models;
 
 public partial class Resource
 {
     public int Id { get; set; }
 
+    [DisplayName("Nazwa")]
     public string Name { get; set; } = null!;
 
     public short ResourceTypeId { get; set; }
