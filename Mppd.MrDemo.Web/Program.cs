@@ -1,3 +1,5 @@
+using Mppd.MrDemo.Web.Models;
+
 namespace Mppd.MrDemo.Web
 {
   public class Program
@@ -8,6 +10,7 @@ namespace Mppd.MrDemo.Web
 
       // Add services to the container.
       builder.Services.AddControllersWithViews();
+      builder.Services.AddDbContext<MddpMrDemoContext>();
 
       var app = builder.Build();
 
