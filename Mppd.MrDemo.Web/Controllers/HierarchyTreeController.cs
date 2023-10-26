@@ -85,15 +85,15 @@ namespace Mppd.MrDemo.Web.Controllers
                 .Include(h => h.Resource)
                 .Include(h => h.ResourceManager)
                 .Include(h => h.ResourceParent)
-                .FirstOrDefaultAsync();
+                .SingleAsync(x => x.Id == id);
             if (hierarchyTree == null)
             {
                 return NotFound();
             }
 
-            ViewData["ResourceId"] = new SelectList(_context.Resources, "ResourceId", "ResourceId", hierarchyTree.ResourceId);
-            ViewData["ResourceManagerId"] = new SelectList(_context.Resources, "ResourceManagerId", "ResourceManagerId", hierarchyTree.ResourceManagerId);
-            ViewData["ResourceParentId"] = new SelectList(_context.Resources, "ResourceParentId", "ResourceParentId", hierarchyTree.ResourceParentId);
+            ViewData["ResourceId"] = new SelectList(_context.Resources, "Id", "Id", hierarchyTree.ResourceId);
+            ViewData["ResourceManagerId"] = new SelectList(_context.Resources, "Id", "Id", hierarchyTree.ResourceManagerId);
+            ViewData["ResourceParentId"] = new SelectList(_context.Resources, "Id", "Id", hierarchyTree.ResourceParentId);
             return View(hierarchyTree);
         }
 
